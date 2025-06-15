@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to Flask App</h1>
+    <p>This is a sample Flask application with authentication.</p>
+    {% if current_user.is_authenticated %}
+        <p>You are logged in as {{ current_user.username }}.</p>
+    {% else %}
+        <p>Please <a href="{{ url_for('wvar_auth.wr_login') }}">login</a> to access the dashboard.</p>
+    {% endif %}
+{% endblock %} 
